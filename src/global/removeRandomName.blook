@@ -1,0 +1,2 @@
+stateNode.setState({ isRandom: false, client: { name: "" } });
+queryElement('[class*="nameInput"]').focus();

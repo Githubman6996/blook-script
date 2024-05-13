@@ -1,0 +1,35 @@
+let aap;
+if (window.getEventListeners(window).keydown.find(x => (aap = x.listener.aap))) alert("You already a percent auto answer active at " + aap + "%! Press ESC to stop it.");
+else {
+    function cancel(e) {
+        if (e.key != "Escape") return;
+        e.stopImmediatePropagation();
+        e.preventDefault();
+        window.removeEventListener("keydown", cancel);
+        window.clearInterval(cancel.interval);
+    };
+    cancel.aap = promptFloat("What grade do you want to get from this set? (0-100)");
+    while (typeof cancel.aap != "number" || isNaN(cancel.aap)) cancel.aap = promptFloat("What grade do you want to get from this set? (0-100)\nInvalid Number");
+    window.addEventListener("keydown", cancel);
+    alert("Press ESC to stop loop.");
+    cancel.interval = window.setInterval(TARGET => {
+        const question = stateNode.state.question || stateNode.props.client.question;
+        if (stateNode.state.stage == "feedback" || stateNode.state.feedback) return queryElement('[class*="feedback"], [id*="feedback"]').firstChild.click();
+        else if (queryElement("[class*='answerContainer']") || queryElement("[class*='typingAnswerWrapper']")) {
+            let correct = 0;
+            let total = 0;
+            for (let corrects = 0; corrects < stateNode.questions.length; corrects++) correct += stateNode.corrects[corrects] || 0;
+            for (let incorrects = 0; incorrects < stateNode.questions.length; incorrects++) total += stateNode.incorrects[incorrects] || 0;
+            total += correct;
+            const yes = total == 0 || Math.abs(correct / (total + 1) - TARGET) >= Math.abs((correct + 1) / (total + 1) - TARGET);
+            if (stateNode.state.question.qType != "typing") {
+                const answerContainers = queryElementAll("[class*='answerContainer']");
+                for (let i = 0; i < answerContainers.length; i++) {
+                    const contains = question.correctAnswers.includes(question.answers[i]);
+                    if (yes == contains) return answerContainers[i].click();
+                }
+                answerContainers[0].click();
+            } else elStateNode("[class*='typingAnswerWrapper']").sendAnswer(yes ? question.answers[0] : Math.random().toString(36).substring(2));
+        }
+    }, 100, cancel.aap / 100);
+}

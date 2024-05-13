@@ -1,0 +1,1 @@
+stateNode.tiles = stateNode.tiles.map(row => row.fill(0));

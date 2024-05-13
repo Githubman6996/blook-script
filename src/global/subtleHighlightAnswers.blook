@@ -1,0 +1,15 @@
+const Question = stateNode.state.question || stateNode.props.client.question;
+let ind = 0;
+while (ind < Question.answers.length) {
+    let j = 0;
+    let found = false;
+    while (j < Question.correctAnswers.length) {
+        if (Question.answers[ind] == Question.correctAnswers[j]) {
+            found = true;
+            break;
+        }
+        j++;
+    }
+    ind++;
+    if (found) queryElement("[class*='answersHolder'] :nth-child(" + ind + ") > div").style.boxShadow = "unset";
+}

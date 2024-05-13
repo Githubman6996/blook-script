@@ -1,0 +1,5 @@
+for (let i = 0; i < stateNode.freeQuestions.length; i++) {
+    stateNode.freeQuestions[i].correctAnswers = stateNode.freeQuestions[i].answers;
+    stateNode.questions[i].correctAnswers = stateNode.questions[i].answers;
+    stateNode.props.client.questions[i].correctAnswers = stateNode.questions[i].answers;
+}

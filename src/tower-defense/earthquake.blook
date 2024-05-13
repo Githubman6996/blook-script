@@ -1,0 +1,25 @@
+stateNode.setState({
+    eventName: "Earthquake",
+    event: {
+        short: "e",
+        color: "#805500",
+        icon: "fas fa-mountain",
+        desc: "All of your towers get mixed up",
+        rate: 0.02
+    },
+    buyTowerName: "",
+    buyTower: {}
+}, () => stateNode.eventTimeout = setTimeout(() => stateNode.setState({ event: {}, eventName: "" }), 6000));
+stateNode.tiles.forEach(row => row.forEach((col, i) => {
+    if (col == 3) row[i] = 0;
+}));
+let tiles = [];
+for (let y = 0; y < stateNode.tiles.length; y++)
+    for (let x = 0; x < stateNode.tiles[y].length; x++)
+        if (stateNode.tiles[y][x] == 0) tiles.push({ x, y });
+tiles.sort(() => 0.5 - Math.random());
+stateNode.towers.forEach(tower => {
+    let tile = tiles.pop();
+    tower.move(tile.x, tile.y, stateNode.tileSize);
+    stateNode.tiles[tile.y][tile.x] = 3;
+});

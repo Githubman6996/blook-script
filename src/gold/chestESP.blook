@@ -1,0 +1,15 @@
+for (let ind = 0; ind < stateNode.state.choices.length; ind++) {
+    let chest = queryElement("div[class*='choice" + (ind + 1) + "']");
+    if (chest && !chest.querySelector('div'))
+        chest.append(createElement('div', {
+            style: {
+                color: "white",
+                fontFamily: "Eczar",
+                fontSize: "2em",
+                display: "flex",
+                justifyContent: "center",
+                transform: "translateY(200px)",
+            },
+            innerText: stateNode.state.choices[ind]
+        }));
+}

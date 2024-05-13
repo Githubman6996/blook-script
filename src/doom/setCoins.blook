@@ -1,0 +1,2 @@
+if (window.location.pathname == "/tower/battle") stateNode.props.setTowerCoins(promptNum("How many coins would you like?"));
+else alert("You need to be in battle to run this cheat!");

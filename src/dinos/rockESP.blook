@@ -1,0 +1,20 @@
+const rocks = queryElement('[class*=rockButton]').parentElement.children;
+if (!Array.prototype.every.call(rocks, element => element.querySelector('div'))) stateNode.setState({
+    choices: [{ type: "fossil", val: 10, rate: 0.1, blook: "Amber" }, { type: "fossil", val: 25, rate: 0.1, blook: "Dino Egg" }, { type: "fossil", val: 50, rate: 0.175, blook: "Dino Fossil" }, { type: "fossil", val: 75, rate: 0.175, blook: "Stegosaurus" }, { type: "fossil", val: 100, rate: 0.15, blook: "Velociraptor" }, { type: "fossil", val: 125, rate: 0.125, blook: "Brontosaurus" }, { type: "fossil", val: 250, rate: 0.075, blook: "Triceratops" }, { type: "fossil", val: 500, rate: 0.025, blook: "Tyrannosaurus Rex" }, { type: "mult", val: 1.5, rate: 0.05 }, { type: "mult", val: 2, rate: 0.025 }].sort(() => 0.5 - Math.random()).slice(0, 3)
+}, () => {
+    Array.prototype.forEach.call(rocks, (element, index) => {
+        const rock = stateNode.state.choices[index];
+        if (element.querySelector('div')) element.querySelector('div').remove();
+        element.append(createElement("div", {
+            style: {
+                color: "white",
+                fontFamily: "Macondo",
+                fontSize: "1em",
+                display: "flex",
+                justifyContent: "center",
+                transform: "translateY(25px)",
+            },
+            innerText: rock.type == "fossil" ? "+" + (Math.round(rock.val * stateNode.state.fossilMult) > 99999999 ? shortNum(Math.round(rock.val * stateNode.state.fossilMult)) : Math.round(rock.val * stateNode.state.fossilMult))+" Fossils" : "x" + rock.val + "Fossils Per Excavation"
+        }));
+    });
+});

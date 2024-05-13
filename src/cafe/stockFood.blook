@@ -1,0 +1,8 @@
+if (window.location.pathname != "/cafe") alert("This can't be run in the shop");
+else stateNode.setState({
+    foods: stateNode.state.foods.map(e => {
+        e.stock = 99;
+        e.level = 5;
+        return e;
+    })
+});
