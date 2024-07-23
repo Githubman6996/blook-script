@@ -1,0 +1,1 @@
+setVal("c/" + stateNode.props.client.name + "/tat", prompt("Who's gold would you like to reset? (Case sensitive)") + ":swap:0");

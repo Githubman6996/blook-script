@@ -1,0 +1,7 @@
+if (stateNode.state.gold == 0) stateNode.setState({ gold: 100, gold2: 100 });
+stateNode._choosePrize = stateNode._choosePrize || stateNode.choosePrize;
+const triple = { type: "multiply", val: 3, text: "Triple Gold!", blook: "Unicorn" };
+stateNode.choosePrize = function (i) {
+    stateNode.state.choices[i] = triple;
+    stateNode._choosePrize(i);
+};
