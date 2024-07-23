@@ -1,3 +1,0 @@
-stateNode.state.customers.forEach((customer, i) => {
-    if (Object.keys(customer).length) stateNode.removeCustomer(i, true);
-});

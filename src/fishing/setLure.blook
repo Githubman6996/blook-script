@@ -1,1 +1,0 @@
-stateNode.setState({ lure: Math.max(Math.min(promptNum("What would you like to set your lure to? (1 - 5)") - 1, 4), 0) });

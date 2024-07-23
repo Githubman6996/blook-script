@@ -1,1 +1,0 @@
-Object.values(queryElement("#phaser-bouncy"))[1].children[0]._owner.stateNode.setState({ score: prompFloat("What do you want to set your score to?") });

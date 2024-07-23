@@ -1,1 +1,0 @@
-stateNode.setState({ islandLevels: Array(stateNode.state.islandLevels.length).fill(5) }, stateNode.updateBoatLevel);

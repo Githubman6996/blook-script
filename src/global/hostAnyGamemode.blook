@@ -1,6 +1,0 @@
-if (window.location.pathname == "/host/settings") {
-    const gamemodes = ["Racing", "Classic", "Factory", "Cafe", "Defense2", "Defense", "Royale", "Gold", "Candy", "Brawl", "Hack", "Pirate", "Fish", "Dino", "Toy", "Rush"];
-    const type = prompt("Which gamemode do you want to switch to? (Case sensitive)\n" + gamemodes.slice(0, gamemodes.length - 1).join(", ") + " or " + gamemodes[gamemodes.length - 1]);
-    if (gamemodes.includes(type)) stateNode.setState({ settings: { type } });
-    else alert("Gamemode not found, make sure you spelled and capitalized it right.");
-} else alert("Run this script on the host settings page");

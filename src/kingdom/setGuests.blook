@@ -1,1 +1,0 @@
-stateNode.setState({ guestScore: promptNum("How many guests do you want?") });

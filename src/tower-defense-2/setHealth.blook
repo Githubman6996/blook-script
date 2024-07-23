@@ -1,1 +1,0 @@
-stateNode.setState({ health: promptNum("How much health do you want?") });

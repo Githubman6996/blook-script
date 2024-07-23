@@ -1,7 +1,0 @@
-const prices = [0, 0, 0, 0];
-stateNode.setState({
-    blooks: stateNode.state.blooks.map(x => {
-        x.price = prices;
-        return x;
-    })
-});

@@ -1,2 +1,0 @@
-stateNode.ducks.forEach(x => (stateNode.tiles[x.y][x.x] = 0));
-stateNode.ducks.length = 0;

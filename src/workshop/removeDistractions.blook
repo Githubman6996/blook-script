@@ -1,1 +1,0 @@
-stateNode.setState({ fog: false, dusk: false, wind: false, plow: false, blizzard: false, force: false, canada: false, trees: [false, false, false, false, false, false, false, false, false, false] });

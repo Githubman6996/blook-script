@@ -1,3 +1,0 @@
-const gold = promptNum("How much gold would you like?");
-stateNode.setState({ gold, gold2: gold });
-setVal("c/" + stateNode.props.client.name + "/g", gold);

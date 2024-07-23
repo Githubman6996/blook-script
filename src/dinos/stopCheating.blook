@@ -1,2 +1,0 @@
-stateNode.setState({ isCheating: false });
-setVal("c/" + stateNode.props.client.name + "/ic", false);

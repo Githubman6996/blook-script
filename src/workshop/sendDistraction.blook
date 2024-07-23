@@ -1,5 +1,0 @@
-let distractions = { c: "Oh Canada", b: "Blizzard", f: "Fog Spell", d: "Dark & Dusk", w: "Howling Wind", g: "Gift Time!", t: "TREES", s: "Snow Plow", fr: "Use The Force" };
-let val = Object.keys(distractions)[Math.floor(Math.random() * 9)];
-stateNode.safe = true;
-setVal("c/" + stateNode.props.client.name + "/tat", val);
-alert("Sent a " + distractions[val] + " distraction");

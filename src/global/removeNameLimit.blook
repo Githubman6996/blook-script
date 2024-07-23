@@ -1,2 +1,0 @@
-queryElement('input[class*="nameInput"]').maxLength = 120; // 120 is the actual limit
-alert("Removed name length limit");

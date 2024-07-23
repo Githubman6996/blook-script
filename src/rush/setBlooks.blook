@@ -1,3 +1,0 @@
-const numBlooks = promptNum("How many blooks do you want?");
-stateNode.setState({ numBlooks });
-setVal((stateNode.isTeam ? "a/" : "c/") + stateNode.props.client.name + "/bs", numBlooks);
