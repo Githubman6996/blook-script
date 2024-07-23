@@ -1,0 +1,3 @@
+stateNode.game.current.config.sceneConfig.physics.world.bodies.entries.forEach(body => {
+    if (body.gameObject.frame.texture.key.includes("obstacle")) body.gameObject.destroy();
+});

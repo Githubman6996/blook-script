@@ -1,0 +1,2 @@
+if (window.location.pathname != "/cafe/shop") alert("This can only be run in the shop");
+else stateNode.setState({ abilities: Object.keys(stateNode.state.abilities).reduce((obj, item) => (obj[item] = 5, obj), {}) });

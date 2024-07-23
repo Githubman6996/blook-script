@@ -1,0 +1,31 @@
+function rand(e, t) {
+    const s = [];
+    while (s.length < t) {
+        const i = Math.random();
+        let r = 0;
+        let g;
+        for (let o = 0; o < e.length; o++) {
+            r += e[o].rate;
+            if (r >= i) {
+                g = e[o];
+                break;
+            }
+        }
+        if (g && !s.includes(g)) s.push(g);
+    }
+    return s;
+};
+
+if (stateNode.state.stage == "excavate") {
+    if (!stateNode.state.choices.length) stateNode.state.choices = rand([{ type: "fossil", val: 10, rate: 0.1, blook: "Amber" }, { type: "fossil", val: 25, rate: 0.1, blook: "Dino Egg" }, { type: "fossil", val: 50, rate: 0.175, blook: "Dino Fossil" }, { type: "fossil", val: 75, rate: 0.175, blook: "Stegosaurus" }, { type: "fossil", val: 100, rate: 0.15, blook: "Velociraptor" }, { type: "fossil", val: 125, rate: 0.125, blook: "Brontosaurus" }, { type: "fossil", val: 250, rate: 0.075, blook: "Triceratops" }, { type: "fossil", val: 500, rate: 0.025, blook: "Tyrannosaurus Rex" }, { type: "mult", val: 1.5, rate: 0.05 }, { type: "mult", val: 2, rate: 0.025 }], 3);
+    let max = 0;
+    let index = -1;
+    for (let i = 0; i < stateNode.state.choices.length; i++) {
+        const choice = stateNode.state.choices[i];
+        const value = (choice.type == "fossil" ? stateNode.state.fossils + choice.val * stateNode.state.fossilMult : stateNode.state.fossils * choice.val) || 0;
+        if (value <= max && choice.type != "mult") continue;
+        max = value;
+        index = i + 1;
+    }
+    queryElement('div[class*=rockRow] > div[role="button"]:nth-child(' + index + ')').click();
+}

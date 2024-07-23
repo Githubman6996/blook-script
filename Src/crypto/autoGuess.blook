@@ -1,0 +1,3 @@
+if (stateNode.state.stage == "hack") Array.prototype.forEach.call(queryElement('div[class*=buttonContainer]').children, button => {
+    if (button.innerText == stateNode.state.correctPassword) button.click();
+});

@@ -1,0 +1,7 @@
+const colliders = stateNode.game.current.config.sceneConfig.physics.world.colliders._active.filter(x => x.callbackContext.toString().includes('dmgCd'));
+for (let i = 0; i < colliders.length; i++) {
+    const enemies = colliders[i].object2;
+    let _start = enemies.classType.prototype.start;
+    enemies.classType.prototype.start = function () { _start.apply(this, arguments); this.val *= 2; };
+    enemies.children.entries.forEach(e => e.val *= 2);
+}

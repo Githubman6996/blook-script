@@ -1,0 +1,1 @@
+stateNode.setState({ fossilMult: promptFloat("What do you want your multiplier to be?") });
