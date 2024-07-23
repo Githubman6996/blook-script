@@ -1,0 +1,1 @@
+stateNode.setState({ cash: promptNum("How much cash would you like?") });

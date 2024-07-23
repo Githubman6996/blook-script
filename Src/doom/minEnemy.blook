@@ -1,0 +1,2 @@
+if (stateNode.state.phase == 'select') stateNode.setState({ enemyCard: Object.assign(Object.assign({}, stateNode.state.enemyCard), { strength: 0, charisma: 0, wisdom: 0 }) });
+else alert('You must be on the attribute selection page!');

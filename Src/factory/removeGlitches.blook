@@ -1,0 +1,22 @@
+stateNode.setState({
+    bits: 0,
+    ads: [],
+    hazards: [],
+    color: "",
+    lol: false,
+    joke: false,
+    slow: false,
+    dance: false,
+    glitch: "",
+    glitcherName: "",
+    glitcherBlook: ""
+});
+window.clearTimeout(stateNode.adTimeout);
+window.clearInterval(stateNode.hazardInterval);
+window.clearTimeout(stateNode.nightTimeout);
+window.clearTimeout(stateNode.glitchTimeout);
+window.clearTimeout(stateNode.lolTimeout);
+window.clearTimeout(stateNode.jokeTimeout);
+window.clearTimeout(stateNode.slowTimeout);
+window.clearTimeout(stateNode.danceTimeout);
+window.clearTimeout(stateNode.nameTimeout);
