@@ -1,0 +1,2 @@
+stateNode.game.current.config.sceneConfig.enemyQueue.length = 0;
+stateNode.game.current.config.sceneConfig.physics.world.bodies.entries.forEach(x => x.gameObject.receiveDamage(x.gameObject.hp, 1));

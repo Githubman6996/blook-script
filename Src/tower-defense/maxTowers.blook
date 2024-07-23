@@ -1,0 +1,5 @@
+stateNode.towers.forEach(tower => {
+    tower.range = 100;
+    tower.fullCd = tower.cd = 0;
+    tower.damage = 1000000;
+});

@@ -1,0 +1,16 @@
+stateNode.props.liveGameController.getDatabaseVal("c", (val) => {
+    if (val == null) return;
+    const players = [];
+    Object.keys(val).forEach(name => {
+        if (name == stateNode.props.client.name) return;
+        players.push({ name, blook: val[name].b, toys: val[name].t || 0 });
+    });
+    players.sort((a, b) => b.toys - a.toys);
+    stateNode.setState({
+        choosingPlayer: false,
+        players,
+        phaseTwo: true,
+        stage: "prize",
+        choiceObj: { type: "swap" }
+    }, () => window.setTimeout(() => stateNode.setState({ choosingPlayer: true }), 300));
+});
